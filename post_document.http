@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/documents/post_document HTTP/1.1
+Content-Type: multipart/form-data; boundary=my-custom-boundary
+
+--my-custom-boundary
+Content-Disposition: form-data; name="title"
+Content-Type: application/text
+
+Hello World!
+--my-custom-boundary
+Content-Disposition: form-data; name="document"; filename="HelloWorld.pdf"
+Content-Type: application/pdf
+
+< docs/HelloWorld.pdf
+--my-custom-boundary--
